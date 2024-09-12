@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adder</title>
+    <style>
+        .catagories{
+            padding: 1% 2%;
+        }
+        .selected{
+            background-color: black;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <input class="name"> 
+    <input class="price">
+    <input class="image"> 
+    <input type="range" id="myRange" min="0" max="100" step="1" value="50" orient="horizontal" list="rangeValues">
+    <datalist id="rangeValues">
+      <option value="0">
+      <option value="25">
+      <option value="50">
+      <option value="75">
+      <option value="100">
+    </datalist>
+    <div class="gridcontinner" style="display: grid;grid-template-columns: 40px 40px 40px;">
+        
+
+    </div>
+    <button >+</button>
+    <button class="game  categories">Game</button>
+    <button class="music  categories">Music</button>
+    <button class="movie  categories" >Movie</button>
+    <script>
+        
+        
+
+        
+           let selected = "";
+              
+            let button = document.querySelectorAll(".categories")
+            button.forEach((elem)=>{
+             elem.addEventListener('click',()=>{
+            if(elem.innerText == "Game"){
+                selected = "Game"
+                document.querySelector(".game").classList.add("selected")
+                document.querySelector(".music").classList.remove("selected")
+                document.querySelector('.movie').classList.remove("selected")
+                
+            }
+            else if(elem.innerText == "Music"){
+                selected = "Music"
+                document.querySelector(".game").classList.remove("selected")
+                document.querySelector(".music").classList.add("selected")
+                document.querySelector('.movie').classList.remove("selected")
+            }
+            else if(elem.innerText == "Movie"){
+                selected = "Movie"
+                document.querySelector(".game").classList.remove("selected")
+                document.querySelector(".music").classList.remove("selected")
+                document.querySelector('.movie').classList.add("selected")
+            }
+            console.log(selected)
+          })
+         
+          
+          
+        })
+        
+      
+        
+
+        
+        
+        
+         
+      //  function classChanger(){
+//      let selected = ""
+//      const Game = document.querySelector('.game');
+//      const Music = document.querySelector('.music');
+//      const movie =document.querySelector('.movie');
+//      Game.onclick(()=>{
+//         selected = "Game"
+//      })
+//      Music.onclick(()=>{
+//         selected ="Music"
+//      })
+
+
+//      if(Game.innerHTML =="Game"){
+//         Game.classList.add('selected')
+//         Game.innerHTML="Game "
+//      }
+//      else if(Game.innerHTML=="Game "){
+//         Game.classList.remove('selected')
+//         Game.innerHTML="Game"  
+//      }
+
+//   }
+
+ //function add(){
+
+//     const name =  document.querySelector(".name").value;
+//     const price = document.querySelector(".price").value;
+//     const image = document.querySelector(".image").values; 
+
+//     function ProductConstuctor (name,price,image){
+//         this.name =name;
+//         this.price = price;
+//         this.image = image;
+//        }
+       
+//        product = new ProductConstuctor (name,price,image)
+      
+   
+// }
+// const add=()=>{
+//  let  name = document.querySelector('.name').value
+// let  price = document.querySelector('.price').value;
+// let image = document.querySelector('.image').value;
+// let html="";
+
+// products = [{
+//     name:name,
+//     price:price,
+//     image:image
+//    }]
+//    let opde =products.forEach((p)=>{
+//     `
+//     <div class="prodactname">${p.name}</div> 
+//        <div class="prodactprice">${p.price}</div> 
+//        <div class="prodactimage">${p.image}</div> 
+//    `
+   
+   
+//    }) 
+//    html +=opde
+//    document.querySelector('.gridcontinner').innerHTML +=  html
+// }
+
+  
+   //d
+   </script>
+</body>
+</html>
